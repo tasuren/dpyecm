@@ -81,6 +81,8 @@ class ExtendContextMenu:
     Args:
         tree: Command tree.
         name: The name of the context menu to be created to display a select menu that contains the context menu to be expanded.
+        guild: A guild that can use this context menu.
+        guilds: Guilds that can use this context menu.
         **kwargs: Keyword arguments to be passed to `discord.app_commands.ContextMenu`."""
 
     def __init__(
