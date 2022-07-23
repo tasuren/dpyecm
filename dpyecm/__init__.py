@@ -1,4 +1,4 @@
-".. include:: ../readme.md" # discord-ext-ectx
+".. include:: ../readme.md" # dpyecm
 
 from __future__ import annotations
 
