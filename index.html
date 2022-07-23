@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>dpyecm API documentation</title>
+<meta name="description" content="[![PyPI](https://img.shields.io/pypi/v/dpyectx)](https://pypi.org/project/dpyectx/) ![PyPI - Python …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Package <code>dpyecm</code></h1>
+</header>
+<section id="section-intro">
+<p><a href="https://pypi.org/project/dpyectx/"><img alt="PyPI" src="https://img.shields.io/pypi/v/dpyectx"></a> <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/dpyectx"> <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/dpyectx"> <img alt="PyPI - License" src="https://img.shields.io/pypi/l/dpyectx"> <a href="https://discord.gg/kfMwZUyGFG"><img alt="Discord" src="https://img.shields.io/discord/777430548951728149?label=chat&amp;logo=discord"></a> <a href="https://www.buymeacoffee.com/tasuren"><img alt="Buy Me a Coffee" src="https://img.shields.io/badge/-tasuren-E9EEF3?label=Buy%20Me%20a%20Coffee&amp;logo=buymeacoffee"></a></p>
+<h1 id="discord-ext-ectx">discord-ext-ectx</h1>
+<p>A library to add more context menus that can be used in discord.py.<br>
+It is implemented by creating a context menu that displays a select box for selecting a context menu.</p>
+<h2 id="example">Example</h2>
+<pre><code class="language-python">...
+
+from dpyecm import ExtendContextMenu
+
+...
+
+ecm = ExtendContextMenu(tree, discord.AppCommandType.user)
+
+@discord.app_commands.context_menu()
+async def show_id(interaction: discord.Interaction, member: discord.Member):
+    await interaction.response.send_message(
+        f&quot;This member's id is `{member.id}`.&quot;, ephemeral=True
+    )
+ecm.add_context(test)
+
+...
+</code></pre>
+<p><img width="522" alt="dpyecm" src="https://user-images.githubusercontent.com/45121209/180586407-91eff192-419b-4a78-ba8b-cf57a627c7ec.png"></p>
+<h2 id="documentation">Documentation</h2>
+<p>Documentation is avaliable at <a href="https://tasuren.github.io/dpyecm">here</a></p>
+<h2 id="license">License</h2>
+<p>MiT License</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;.. include:: ../readme.md&#34; # dpyecm
+
+from __future__ import annotations
+
+from typing import TypeAlias, Union, Any
+from collections.abc import Sequence
+
+import discord
+
+
+__version__ = &#34;0.1.0&#34;
+__author__ = &#34;tasuren&#34;
+
+
+__all__ = (&#34;CallbackObj&#34;, &#34;SelectExtendContextMenuView&#34;, &#34;ExtendContextMenu&#34;)
+CallbackObj: TypeAlias = Union[discord.Message, discord.User, discord.Member]
+&#34;Alias of the type Union of the object that the callback may receive.&#34;
+
+
+class SelectExtendContextMenuView(discord.ui.View):
+    &#34;&#34;&#34;This View implements a select box for selecting other additionally registered context menus.
+
+    Args:
+        ecm: An instance of `ExtendContextMenu`.
+        interaction: `discord.Interaction` using this View.
+        *args: Arguments to be passed to super class&#39;s constructor.
+        **kawrgs: Keyword arguments to be passed to super class&#39;s constructor.&#34;&#34;&#34;
+
+    placeholder = &#34;Select what you want to order&#34;
+
+    def __init__(
+        self, ecm: ExtendContextMenu, interaction: discord.Interaction,
+        obj: CallbackObj, *args: Any, **kwargs: Any
+    ):
+        self.ecm, self.obj = ecm, obj
+        super().__init__(*args, **kwargs)
+        self.contexts: list[discord.app_commands.ContextMenu] = [
+            context for context in self.ecm.contexts
+            if not isinstance(context._guild_ids, list) or (
+                interaction.guild_id is not None
+                and interaction.guild_id in context._guild_ids
+            )
+        ]
+        select, count = self.make_select(), 0
+        for context in self.contexts:
+            count += 1
+            select.add_option(label=context.name, value=context.name)
+            if count == 25:
+                self.add_item(select)
+                select = self.make_select()
+                count = 0
+        if count != 0:
+            self.add_item(select)
+
+    def make_select(self) -&gt; discord.ui.Select:
+        &#34;Function to return a select for an additional context menu.&#34;
+        select = discord.ui.Select(placeholder=self.placeholder)
+        select.callback = self.callback
+        return select
+
+    async def callback(self, interaction: discord.Interaction) -&gt; None:
+        &#34;Function called when a select is selected for an additional context menu.&#34;
+        for item in self.children:
+            if isinstance(item, discord.ui.Select):
+                if not item.values:
+                    continue
+                for context in self.contexts:
+                    if context.name == item.values[0]:
+                        await context.callback(interaction, self.obj) # type: ignore
+                        return
+
+
+class ExtendContextMenu:
+    &#34;&#34;&#34;Cog to register more than 5 context menus.
+    Here&#39;s how it works:
+    Registers a single context menu.
+    When the item in the context menu is clicked, another registered context menu item is selected in the select box.
+    Executes the selected context menu item.
+    This allows you to run more context menus than you can.
+
+    Args:
+        tree: Command tree.
+        name: The name of the context menu to be created to display a select menu that contains the context menu to be expanded.
+        guild: A guild that can use this context menu.
+        guilds: Guilds that can use this context menu.
+        **kwargs: Keyword arguments to be passed to `discord.app_commands.ContextMenu`.&#34;&#34;&#34;
+
+    def __init__(
+        self, tree: discord.app_commands.CommandTree, type_: discord.AppCommandType,
+        name: str = &#34;Other&#34;, guild: discord.abc.Snowflake | None = discord.utils.MISSING,
+        guilds: Sequence[discord.abc.Snowflake] = discord.utils.MISSING, **kwargs: Any
+    ):
+        self.tree = tree
+        self.contexts: list[discord.app_commands.ContextMenu] = []
+        callback = self._callback_for_message
+        if type_ == discord.AppCommandType.user:
+            callback = self._callback_for_user
+        if &#34;guild_ids&#34; not in kwargs and (guild or guilds):
+            kwargs[&#34;guild_ids&#34;] = [guild.id] if guild else [guild.id for guild in guilds]
+        self.tree.add_command(discord.app_commands.ContextMenu(
+            name=name, callback=callback, type=type_, **kwargs
+        ), guild=guild, guilds=guilds)
+
+    def get_reply_kwargs(self, interaction: discord.Interaction, obj: CallbackObj) -&gt; dict[str, Any]:
+        &#34;&#34;&#34;Returns an argument to be passed to the function `discord.InteractionResponse.send_message` when replying with a select box for selecting an item in a context menu registered with other additions.
+        Override if you want to customize it.
+
+        Args:
+            interaction: `discord.Interaction`.
+            obj: Any of the objects that the callback may receive.
+                For example, if the context menu is a message context menu, it will be a message object.&#34;&#34;&#34;
+        return {
+            &#34;content&#34;: &#34;Choose what you want to do.&#34;, &#34;ephemeral&#34;: True,
+            &#34;view&#34;: SelectExtendContextMenuView(self, interaction, obj)
+        }
+
+    async def callback(self, interaction: discord.Interaction, obj: CallbackObj) -&gt; None:
+        &#34;&#34;&#34;Callback called when a context menu added by this class is selected to display a select box for selecting a context menu added elsewhere.
+
+        Args:
+            interaction: `discord.Interaction`.
+            obj: Any of the objects that the callback may receive.
+                For example, if the context menu is a message context menu, it will be a message object.&#34;&#34;&#34;
+        await interaction.response.send_message(**self.get_reply_kwargs(interaction, obj))
+
+    async def _callback_for_message(self, interaction: discord.Interaction, obj: discord.Message) -&gt; None:
+        await self.callback(interaction, obj)
+    async def _callback_for_user(self, interaction: discord.Interaction, obj: discord.User) -&gt; None:
+        await self.callback(interaction, obj)
+
+    def add_context(self, context: discord.app_commands.ContextMenu) -&gt; None:
+        &#34;&#34;&#34;Add a context menu.
+
+        Args:
+            context: This is the context menu to be expanded.&#34;&#34;&#34;
+        self.contexts.append(context)
+
+    def remove_context(self, target: discord.app_commands.ContextMenu | str, guild_id: int | None = None) -&gt; None:
+        &#34;&#34;&#34;Deletes the context menu specified by the name of the context menu object or context menu.
+        The function also returns the deleted context.
+        If it is a non-existent context menu, a `KeyError` or `ValueError` is occured.
+
+        Args:
+            target: The object or name of the context menu to be deleted.
+            guild_id: The guild ID from which the context menu to delete can be run.&#34;&#34;&#34;
+        if isinstance(target, str):
+            for index, context in enumerate(self.contexts):
+                if context.name == target and (
+                    guild_id is None or guild_id in context._guild_ids # type: ignore
+                ):
+                    del self.contexts[index]
+                    break
+            else:
+                raise ValueError(target)
+        else:
+            self.contexts.remove(target)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-variables">Global variables</h2>
+<dl>
+<dt id="dpyecm.CallbackObj"><code class="name">var <span class="ident">CallbackObj</span> : TypeAlias</code></dt>
+<dd>
+<div class="desc"><p>Alias of the type Union of the object that the callback may receive.</p></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="dpyecm.ExtendContextMenu"><code class="flex name class">
+<span>class <span class="ident">ExtendContextMenu</span></span>
+<span>(</span><span>tree: discord.app_commands.CommandTree, type_: discord.AppCommandType, name: str = 'Other', guild: discord.abc.Snowflake | None = ..., guilds: Sequence[discord.abc.Snowflake] = ..., **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Cog to register more than 5 context menus.
+Here's how it works:
+Registers a single context menu.
+When the item in the context menu is clicked, another registered context menu item is selected in the select box.
+Executes the selected context menu item.
+This allows you to run more context menus than you can.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>tree</code></strong></dt>
+<dd>Command tree.</dd>
+<dt><strong><code>name</code></strong></dt>
+<dd>The name of the context menu to be created to display a select menu that contains the context menu to be expanded.</dd>
+<dt><strong><code>guild</code></strong></dt>
+<dd>A guild that can use this context menu.</dd>
+<dt><strong><code>guilds</code></strong></dt>
+<dd>Guilds that can use this context menu.</dd>
+<dt><strong><code>**kwargs</code></strong></dt>
+<dd>Keyword arguments to be passed to <code>discord.app_commands.ContextMenu</code>.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ExtendContextMenu:
+    &#34;&#34;&#34;Cog to register more than 5 context menus.
+    Here&#39;s how it works:
+    Registers a single context menu.
+    When the item in the context menu is clicked, another registered context menu item is selected in the select box.
+    Executes the selected context menu item.
+    This allows you to run more context menus than you can.
+
+    Args:
+        tree: Command tree.
+        name: The name of the context menu to be created to display a select menu that contains the context menu to be expanded.
+        guild: A guild that can use this context menu.
+        guilds: Guilds that can use this context menu.
+        **kwargs: Keyword arguments to be passed to `discord.app_commands.ContextMenu`.&#34;&#34;&#34;
+
+    def __init__(
+        self, tree: discord.app_commands.CommandTree, type_: discord.AppCommandType,
+        name: str = &#34;Other&#34;, guild: discord.abc.Snowflake | None = discord.utils.MISSING,
+        guilds: Sequence[discord.abc.Snowflake] = discord.utils.MISSING, **kwargs: Any
+    ):
+        self.tree = tree
+        self.contexts: list[discord.app_commands.ContextMenu] = []
+        callback = self._callback_for_message
+        if type_ == discord.AppCommandType.user:
+            callback = self._callback_for_user
+        if &#34;guild_ids&#34; not in kwargs and (guild or guilds):
+            kwargs[&#34;guild_ids&#34;] = [guild.id] if guild else [guild.id for guild in guilds]
+        self.tree.add_command(discord.app_commands.ContextMenu(
+            name=name, callback=callback, type=type_, **kwargs
+        ), guild=guild, guilds=guilds)
+
+    def get_reply_kwargs(self, interaction: discord.Interaction, obj: CallbackObj) -&gt; dict[str, Any]:
+        &#34;&#34;&#34;Returns an argument to be passed to the function `discord.InteractionResponse.send_message` when replying with a select box for selecting an item in a context menu registered with other additions.
+        Override if you want to customize it.
+
+        Args:
+            interaction: `discord.Interaction`.
+            obj: Any of the objects that the callback may receive.
+                For example, if the context menu is a message context menu, it will be a message object.&#34;&#34;&#34;
+        return {
+            &#34;content&#34;: &#34;Choose what you want to do.&#34;, &#34;ephemeral&#34;: True,
+            &#34;view&#34;: SelectExtendContextMenuView(self, interaction, obj)
+        }
+
+    async def callback(self, interaction: discord.Interaction, obj: CallbackObj) -&gt; None:
+        &#34;&#34;&#34;Callback called when a context menu added by this class is selected to display a select box for selecting a context menu added elsewhere.
+
+        Args:
+            interaction: `discord.Interaction`.
+            obj: Any of the objects that the callback may receive.
+                For example, if the context menu is a message context menu, it will be a message object.&#34;&#34;&#34;
+        await interaction.response.send_message(**self.get_reply_kwargs(interaction, obj))
+
+    async def _callback_for_message(self, interaction: discord.Interaction, obj: discord.Message) -&gt; None:
+        await self.callback(interaction, obj)
+    async def _callback_for_user(self, interaction: discord.Interaction, obj: discord.User) -&gt; None:
+        await self.callback(interaction, obj)
+
+    def add_context(self, context: discord.app_commands.ContextMenu) -&gt; None:
+        &#34;&#34;&#34;Add a context menu.
+
+        Args:
+            context: This is the context menu to be expanded.&#34;&#34;&#34;
+        self.contexts.append(context)
+
+    def remove_context(self, target: discord.app_commands.ContextMenu | str, guild_id: int | None = None) -&gt; None:
+        &#34;&#34;&#34;Deletes the context menu specified by the name of the context menu object or context menu.
+        The function also returns the deleted context.
+        If it is a non-existent context menu, a `KeyError` or `ValueError` is occured.
+
+        Args:
+            target: The object or name of the context menu to be deleted.
+            guild_id: The guild ID from which the context menu to delete can be run.&#34;&#34;&#34;
+        if isinstance(target, str):
+            for index, context in enumerate(self.contexts):
+                if context.name == target and (
+                    guild_id is None or guild_id in context._guild_ids # type: ignore
+                ):
+                    del self.contexts[index]
+                    break
+            else:
+                raise ValueError(target)
+        else:
+            self.contexts.remove(target)</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="dpyecm.ExtendContextMenu.add_context"><code class="name flex">
+<span>def <span class="ident">add_context</span></span>(<span>self, context: discord.app_commands.ContextMenu) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Add a context menu.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>context</code></strong></dt>
+<dd>This is the context menu to be expanded.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_context(self, context: discord.app_commands.ContextMenu) -&gt; None:
+    &#34;&#34;&#34;Add a context menu.
+
+    Args:
+        context: This is the context menu to be expanded.&#34;&#34;&#34;
+    self.contexts.append(context)</code></pre>
+</details>
+</dd>
+<dt id="dpyecm.ExtendContextMenu.callback"><code class="name flex">
+<span>async def <span class="ident">callback</span></span>(<span>self, interaction: discord.Interaction, obj: <a title="dpyecm.CallbackObj" href="#dpyecm.CallbackObj">CallbackObj</a>) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Callback called when a context menu added by this class is selected to display a select box for selecting a context menu added elsewhere.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>interaction</code></strong></dt>
+<dd><code>discord.Interaction</code>.</dd>
+<dt><strong><code>obj</code></strong></dt>
+<dd>Any of the objects that the callback may receive.
+For example, if the context menu is a message context menu, it will be a message object.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def callback(self, interaction: discord.Interaction, obj: CallbackObj) -&gt; None:
+    &#34;&#34;&#34;Callback called when a context menu added by this class is selected to display a select box for selecting a context menu added elsewhere.
+
+    Args:
+        interaction: `discord.Interaction`.
+        obj: Any of the objects that the callback may receive.
+            For example, if the context menu is a message context menu, it will be a message object.&#34;&#34;&#34;
+    await interaction.response.send_message(**self.get_reply_kwargs(interaction, obj))</code></pre>
+</details>
+</dd>
+<dt id="dpyecm.ExtendContextMenu.get_reply_kwargs"><code class="name flex">
+<span>def <span class="ident">get_reply_kwargs</span></span>(<span>self, interaction: discord.Interaction, obj: <a title="dpyecm.CallbackObj" href="#dpyecm.CallbackObj">CallbackObj</a>) ‑> dict[str, typing.Any]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns an argument to be passed to the function <code>discord.InteractionResponse.send_message</code> when replying with a select box for selecting an item in a context menu registered with other additions.
+Override if you want to customize it.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>interaction</code></strong></dt>
+<dd><code>discord.Interaction</code>.</dd>
+<dt><strong><code>obj</code></strong></dt>
+<dd>Any of the objects that the callback may receive.
+For example, if the context menu is a message context menu, it will be a message object.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_reply_kwargs(self, interaction: discord.Interaction, obj: CallbackObj) -&gt; dict[str, Any]:
+    &#34;&#34;&#34;Returns an argument to be passed to the function `discord.InteractionResponse.send_message` when replying with a select box for selecting an item in a context menu registered with other additions.
+    Override if you want to customize it.
+
+    Args:
+        interaction: `discord.Interaction`.
+        obj: Any of the objects that the callback may receive.
+            For example, if the context menu is a message context menu, it will be a message object.&#34;&#34;&#34;
+    return {
+        &#34;content&#34;: &#34;Choose what you want to do.&#34;, &#34;ephemeral&#34;: True,
+        &#34;view&#34;: SelectExtendContextMenuView(self, interaction, obj)
+    }</code></pre>
+</details>
+</dd>
+<dt id="dpyecm.ExtendContextMenu.remove_context"><code class="name flex">
+<span>def <span class="ident">remove_context</span></span>(<span>self, target: discord.app_commands.ContextMenu | str, guild_id: int | None = None) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Deletes the context menu specified by the name of the context menu object or context menu.
+The function also returns the deleted context.
+If it is a non-existent context menu, a <code>KeyError</code> or <code>ValueError</code> is occured.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>target</code></strong></dt>
+<dd>The object or name of the context menu to be deleted.</dd>
+<dt><strong><code>guild_id</code></strong></dt>
+<dd>The guild ID from which the context menu to delete can be run.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def remove_context(self, target: discord.app_commands.ContextMenu | str, guild_id: int | None = None) -&gt; None:
+    &#34;&#34;&#34;Deletes the context menu specified by the name of the context menu object or context menu.
+    The function also returns the deleted context.
+    If it is a non-existent context menu, a `KeyError` or `ValueError` is occured.
+
+    Args:
+        target: The object or name of the context menu to be deleted.
+        guild_id: The guild ID from which the context menu to delete can be run.&#34;&#34;&#34;
+    if isinstance(target, str):
+        for index, context in enumerate(self.contexts):
+            if context.name == target and (
+                guild_id is None or guild_id in context._guild_ids # type: ignore
+            ):
+                del self.contexts[index]
+                break
+        else:
+            raise ValueError(target)
+    else:
+        self.contexts.remove(target)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="dpyecm.SelectExtendContextMenuView"><code class="flex name class">
+<span>class <span class="ident">SelectExtendContextMenuView</span></span>
+<span>(</span><span>ecm: <a title="dpyecm.ExtendContextMenu" href="#dpyecm.ExtendContextMenu">ExtendContextMenu</a>, interaction: discord.Interaction, obj: <a title="dpyecm.CallbackObj" href="#dpyecm.CallbackObj">CallbackObj</a>, *args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This View implements a select box for selecting other additionally registered context menus.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>ecm</code></strong></dt>
+<dd>An instance of <code><a title="dpyecm.ExtendContextMenu" href="#dpyecm.ExtendContextMenu">ExtendContextMenu</a></code>.</dd>
+<dt><strong><code>interaction</code></strong></dt>
+<dd><code>discord.Interaction</code> using this View.</dd>
+<dt><strong><code>*args</code></strong></dt>
+<dd>Arguments to be passed to super class's constructor.</dd>
+<dt><strong><code>**kawrgs</code></strong></dt>
+<dd>Keyword arguments to be passed to super class's constructor.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SelectExtendContextMenuView(discord.ui.View):
+    &#34;&#34;&#34;This View implements a select box for selecting other additionally registered context menus.
+
+    Args:
+        ecm: An instance of `ExtendContextMenu`.
+        interaction: `discord.Interaction` using this View.
+        *args: Arguments to be passed to super class&#39;s constructor.
+        **kawrgs: Keyword arguments to be passed to super class&#39;s constructor.&#34;&#34;&#34;
+
+    placeholder = &#34;Select what you want to order&#34;
+
+    def __init__(
+        self, ecm: ExtendContextMenu, interaction: discord.Interaction,
+        obj: CallbackObj, *args: Any, **kwargs: Any
+    ):
+        self.ecm, self.obj = ecm, obj
+        super().__init__(*args, **kwargs)
+        self.contexts: list[discord.app_commands.ContextMenu] = [
+            context for context in self.ecm.contexts
+            if not isinstance(context._guild_ids, list) or (
+                interaction.guild_id is not None
+                and interaction.guild_id in context._guild_ids
+            )
+        ]
+        select, count = self.make_select(), 0
+        for context in self.contexts:
+            count += 1
+            select.add_option(label=context.name, value=context.name)
+            if count == 25:
+                self.add_item(select)
+                select = self.make_select()
+                count = 0
+        if count != 0:
+            self.add_item(select)
+
+    def make_select(self) -&gt; discord.ui.Select:
+        &#34;Function to return a select for an additional context menu.&#34;
+        select = discord.ui.Select(placeholder=self.placeholder)
+        select.callback = self.callback
+        return select
+
+    async def callback(self, interaction: discord.Interaction) -&gt; None:
+        &#34;Function called when a select is selected for an additional context menu.&#34;
+        for item in self.children:
+            if isinstance(item, discord.ui.Select):
+                if not item.values:
+                    continue
+                for context in self.contexts:
+                    if context.name == item.values[0]:
+                        await context.callback(interaction, self.obj) # type: ignore
+                        return</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>discord.ui.view.View</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="dpyecm.SelectExtendContextMenuView.placeholder"><code class="name">var <span class="ident">placeholder</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="dpyecm.SelectExtendContextMenuView.callback"><code class="name flex">
+<span>async def <span class="ident">callback</span></span>(<span>self, interaction: discord.Interaction) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Function called when a select is selected for an additional context menu.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def callback(self, interaction: discord.Interaction) -&gt; None:
+    &#34;Function called when a select is selected for an additional context menu.&#34;
+    for item in self.children:
+        if isinstance(item, discord.ui.Select):
+            if not item.values:
+                continue
+            for context in self.contexts:
+                if context.name == item.values[0]:
+                    await context.callback(interaction, self.obj) # type: ignore
+                    return</code></pre>
+</details>
+</dd>
+<dt id="dpyecm.SelectExtendContextMenuView.make_select"><code class="name flex">
+<span>def <span class="ident">make_select</span></span>(<span>self) ‑> discord.ui.select.Select</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Function to return a select for an additional context menu.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def make_select(self) -&gt; discord.ui.Select:
+    &#34;Function to return a select for an additional context menu.&#34;
+    select = discord.ui.Select(placeholder=self.placeholder)
+    select.callback = self.callback
+    return select</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul>
+<li><a href="#discord-ext-ectx">discord-ext-ectx</a><ul>
+<li><a href="#example">Example</a></li>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-variables">Global variables</a></h3>
+<ul class="">
+<li><code><a title="dpyecm.CallbackObj" href="#dpyecm.CallbackObj">CallbackObj</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="dpyecm.ExtendContextMenu" href="#dpyecm.ExtendContextMenu">ExtendContextMenu</a></code></h4>
+<ul class="">
+<li><code><a title="dpyecm.ExtendContextMenu.add_context" href="#dpyecm.ExtendContextMenu.add_context">add_context</a></code></li>
+<li><code><a title="dpyecm.ExtendContextMenu.callback" href="#dpyecm.ExtendContextMenu.callback">callback</a></code></li>
+<li><code><a title="dpyecm.ExtendContextMenu.get_reply_kwargs" href="#dpyecm.ExtendContextMenu.get_reply_kwargs">get_reply_kwargs</a></code></li>
+<li><code><a title="dpyecm.ExtendContextMenu.remove_context" href="#dpyecm.ExtendContextMenu.remove_context">remove_context</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="dpyecm.SelectExtendContextMenuView" href="#dpyecm.SelectExtendContextMenuView">SelectExtendContextMenuView</a></code></h4>
+<ul class="">
+<li><code><a title="dpyecm.SelectExtendContextMenuView.callback" href="#dpyecm.SelectExtendContextMenuView.callback">callback</a></code></li>
+<li><code><a title="dpyecm.SelectExtendContextMenuView.make_select" href="#dpyecm.SelectExtendContextMenuView.make_select">make_select</a></code></li>
+<li><code><a title="dpyecm.SelectExtendContextMenuView.placeholder" href="#dpyecm.SelectExtendContextMenuView.placeholder">placeholder</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
