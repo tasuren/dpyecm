@@ -5,3 +5,5 @@ __pycache__
 *.*-workspace
 *.*-project
 tmp
+build
+*.egg-info

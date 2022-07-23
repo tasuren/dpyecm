@@ -42,7 +42,6 @@ setup(
     license='MIT',
     keywords='discord discord.py',
     packages=[NAME],
-    install_requires=REQUIREMENTS,
     extras_requires={},
     python_requires='>=3.10.0',
     classifiers=[
