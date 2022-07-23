@@ -29,6 +29,7 @@ ecm_message.add_context(discord.app_commands.ContextMenu(name="test1", callback=
 # ecm_user.add_context(discord.app_commands.ContextMenu(name="test2", callback=test))
 
 @discord.app_commands.context_menu()
+@discord.app_commands.checks.cooldown(1, 30)
 async def show_id(interaction: discord.Interaction, member: discord.Member):
     await interaction.response.send_message(
         f"This member's id is `{member.id}`.", ephemeral=True
