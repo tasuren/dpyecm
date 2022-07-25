@@ -8,7 +8,7 @@ from collections.abc import Sequence
 import discord
 
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 __author__ = "tasuren"
 
 
@@ -67,7 +67,10 @@ class SelectExtendContextMenuView(discord.ui.View):
                 for context in self.contexts:
                     if context.name == item.values[0]:
                         assert isinstance(context, discord.app_commands.ContextMenu)
-                        await context._invoke(interaction, self.obj)
+                        try:
+                            await context._invoke(interaction, self.obj)
+                        except discord.app_commands.AppCommandError as e:
+                            await self.ecm.tree.on_error(interaction, e)
                         return
 
 

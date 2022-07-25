@@ -16,6 +16,11 @@ ecm_message = ExtendContextMenu(tree, discord.AppCommandType.message, guild=pgui
 ecm_user = ExtendContextMenu(tree, discord.AppCommandType.user, guild=pguild)
 
 
+@tree.error
+async def on_error(interaction: discord.Interaction, error):
+    print(1, error)
+
+
 @client.event
 async def on_ready():
     print("Connected")
@@ -23,10 +28,15 @@ async def on_ready():
     print("Synced")
 
 
-async def test(interaction: discord.Interaction, obj: discord.Message):
+async def test1(interaction: discord.Interaction, obj: discord.Message):
     await interaction.response.send_message(f"Hi: {obj}", ephemeral=True)
-ecm_message.add_context(discord.app_commands.ContextMenu(name="test1", callback=test))
-# ecm_user.add_context(discord.app_commands.ContextMenu(name="test2", callback=test))
+ecm_message.add_context(discord.app_commands.ContextMenu(name="test1", callback=test1))
+ecm_user.add_context(discord.app_commands.ContextMenu(name="test1", callback=test1))
+async def test2(interaction: discord.Interaction, obj: discord.Message):
+    await interaction.response.send_message(f"Hi: {obj}", ephemeral=True)
+    raise ValueError("test")
+ecm_message.add_context(discord.app_commands.ContextMenu(name="test2", callback=test2))
+
 
 @discord.app_commands.context_menu()
 @discord.app_commands.checks.cooldown(1, 30)
@@ -35,5 +45,6 @@ async def show_id(interaction: discord.Interaction, member: discord.Member):
         f"This member's id is `{member.id}`.", ephemeral=True
     )
 ecm_user.add_context(show_id)
+
 
 client.run(environ["TOKEN"])
