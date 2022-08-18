@@ -1,5 +1,5 @@
 [![PyPI](https://img.shields.io/pypi/v/dpyecm)](https://pypi.org/project/dpyecm/) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/dpyecm) ![PyPI - Downloads](https://img.shields.io/pypi/dm/dpyecm) ![PyPI - License](https://img.shields.io/pypi/l/dpyecm) [![Discord](https://img.shields.io/discord/777430548951728149?label=chat&logo=discord)](https://discord.gg/kfMwZUyGFG) [![Buy Me a Coffee](https://img.shields.io/badge/-tasuren-E9EEF3?label=Buy%20Me%20a%20Coffee&logo=buymeacoffee)](https://www.buymeacoffee.com/tasuren)
-# discord-ext-ectx
+# dpyecm
 A library to add more context menus that can be used in discord.py 2.0.  
 It is implemented by creating a context menu that displays a select box for selecting a context menu.
 
